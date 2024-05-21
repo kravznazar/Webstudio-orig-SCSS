@@ -1,0 +1,120 @@
+.header {
+    border-bottom: 1px solid $line-white-color;
+
+    &__logo {
+        color: inherit;
+        font-family: "Raleway";
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        text-align: left;
+    }
+
+   
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        @include tab(768px) {
+            gap: 87px;
+        }
+
+        @include tab(1200px) {
+            gap: 93px;
+        }
+    }
+
+    &__btn {
+        display: block;
+        margin-left: auto;
+
+        @include tab(768px) {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    display: none;
+    @include tab(768px) {
+        display: block;
+    }
+
+    &__list {
+        display: flex;
+        gap: 50px;
+    }
+
+    &__link {
+        position: relative;
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: $black-color;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $blue-color;
+        }
+    }
+}
+
+.active {
+    color: $blue-color;
+
+    &::after {
+        position: absolute;
+        top: 46px;
+        display: block;
+        content: "";
+        animation: lineActive 0.5s ease;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #2196F3;
+    }
+}
+
+.contacts {
+    display: none;
+    @include tab(768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: auto;
+    }
+
+    @include desc(1200px) {
+        flex-direction: row;
+        gap: 50px;
+    }
+    
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: $gray-color;
+        transition: 0.2s;
+        @include tab(768px) {
+            font-size: 12px;
+        }
+
+        @include desc(1200px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: $blue-color;
+        }
+    }
+    
+    &__icon {
+        fill: currentColor;
+    }
+}
